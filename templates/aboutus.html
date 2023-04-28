@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width">
+    <title> About Us Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <style>
+        article {
+            padding: 10px;
+            background: wheat;
+            flex: 1 200px;
+            margin: 7px;
+            border-radius: 20px;
+            
+        }
+
+        section {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .container .about .submit-btn {
+            width: 350px;
+            color: white;
+        }
+
+        .container .about a {
+            font-size: 20px;
+            font-style: bold;
+            color: white;
+        }
+
+        .site-about {
+            margin-left: 20px;
+            margin-top: 25px;
+            text-align: justify;
+            margin-right: 20px;
+            padding:20px;
+
+        }
+
+        p {
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .people .sb{
+color: white;
+}
+.people p{
+    text-align: justify;
+}
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">  
+              <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+            </div>
+            <ul>
+                
+                <li> <a href="{{ url_for('index')}}">Home</a></li>
+                <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+                <li> <a href="{{ url_for('search')}}">Flights</a></li>
+                <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+                <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+        <div class="site-about">
+            <h1 class="heading">ABOUT OUR SITE</h1>
+            <br>
+            <p>
+                This website is created keeping in mind the hurdles faced by many people, especially students. There are
+                many instances where we postpone or cancel a trip as the overall expenses go above budget, especially
+                the cost of the commute. Through this website, people can book flights at affordable costs and at prices
+                lower than those on other airline websites. Students and the elderly with limited income benefit the
+                most from the coupon codes that are available 24 hours a day, 365 days a year.</p><br><br>
+            <p>
+                Florida is known to be a tourist spot, with Miami and Orlando as its hotspots. Considering logistics, we
+                have limited flight services locally to Florida between Tampa, Orlando, Miami, Gainesville, Melbourne,
+                Key West, and Jacksonville. As students, there is a need for us to travel locally for not only academic
+                internships but also to explore different places, make memories, and reminisce about them in the future.
+                This website will help us travel guilt-free. In the future, we want to expand the website to support
+                travel within the USA.
+
+                This website allows passengers to check in virtually within 24 hours of departure time. Through virtual
+                check-in, passengers can download their boarding passes and enter directly through the boarding gate,
+                hassle-free. This feature eliminates the practice of waiting in lines. The user gets timely updates
+                about the flights. Users can also access information on various policies, FAQs, and baggage allowances.
+            </p><br><br>
+
+            <p> In addition to the already-affordable fares, students can avail themselves of a special “student
+                privilege” discount by signing up with their corresponding university email. Once you get verified as a
+                student, we guarantee that you can fly with MLVT at much cheaper fares than any other means of
+                transport. Our mission is to provide a seamless flying experience. Hence, we strive to keep our fares as
+                low and transparent as possible—no hidden fees or taxes.
+                Though the fares are cheap, the flight isn’t. We take pride in keeping our flights neat and clean. Every
+                little detail is taken care of with the utmost attention; no compromises are made when it comes to
+                flying clean. Apart from the technical checks, the interior of the plane is sanitized for every trip,
+                and the wear and tear are replaced.
+            </p><br><br>
+
+            <p> Currently, the website is static in nature. The available flights and fares are displayed on a single
+                page, but in the future, we will include JavaScript to make the website dynamic. We will enable the seat
+                selection option. Based on the inputs from the itinerary search form and the seat selected, a ticket
+                along with the boarding pass will be displayed. Adding to this, we will enable the coupon code
+                application at the time of checkout.
+            </p><br><br>
+        </div>
+        <br><br>
+        <br><br>
+        <div class="people">
+            <h1 class="heading">ABOUT US</h1>
+            <br>
+            <section>
+                <article>
+                    <h2>
+                        <center> Meenakshi Dasari </center><br>
+                        <center><img src="{{ url_for('static', filename='img/meena.jpeg')}}" class="profile"></center><br>
+                        <center>
+                            <a style="text-decoration: none; color:#0072b1; font-size:22px;" href="https://www.linkedin.com/in/meena-dasari/">
+                                linkedin </a></center>
+                        <br>
+                    </h2>
+                    <p> I have a few years of experience in Cognizant Technology Solutions as a JAVA Developer. I worked on the Verizon Telecommunications project, where I designed, built, and configured applications to meet business process and application requirements. My ultimate goal is to become a Data Engineer.</p><br>
+                    <p>This flask assignment helped me to learn about storing the data in SQLite for Signup, and  Payment pages. I have generated a ticket using javascript before. Now by selecting the itinerary options provided the selected itinerary information is getting stored in the database and the ticket is getting printed on thank you page.</p>
+                </article>
+                <article>
+                    <h2>
+                        <center>Likhitha Duggi</center><br>
+                        <center><img src="{{ url_for('static', filename='img/likhitha.jpeg')}}" class="profile"> </center><br>
+                        <center>
+                            <a style="text-decoration: none; color:#0072b1; font-size:22px;" href="https://www.linkedin.com/in/likhithaduggi/">
+                                linkedin </a></center>
+                        <br>
+                    </h2>
+                    <p > As an analyst at Deloitte Consulting Private Limited, I managed client's AWS services and their network infrastructure. I was a part of a team that created an automation script that reduced man-hours and cost by a huge factor. I would like to become a Data Scientist and provide solutions to real world problems. </p><br>
+                    <p>
+                        I worked on the initial setup of app.py which includes setting up the folder structure, routing and rendering html pages, replacing the html/css/images link so that it is compatible with flask application. I worked on user login validation and providing required alerts for successful registration, incorrect password and styled pages that fetch data from databases.
+                    </p>
+                </article>
+                <article>
+                    <h2>
+                        <center> Vinay Thattukolla</center><br>
+                        <center>
+                            <img src="{{ url_for('static', filename='img/vinay.jpeg')}}"  class="profile">
+                        </center><br>
+                        <center>
+                            <a style="text-decoration: none; color:#0072b1; font-size:22px;" href="https://www.linkedin.com/in/saivinaythattukolla">
+                                linkedin </a></center>
+                        <br>
+                    </h2>
+                    <p> I worked as a machine learning engineer at TCS. I worked in the banking sector where I used various tools like tesseract, python , SQL and NLP-OCR to extract data from the documents. We used blue prism tool to automate the process. After extracting the data we analyzed the financial system of the clinet.
+                    </p><br><p>To ensure proper functionality, I tested the payment page thoroughly and debugged any issues that arose. Using Flask's built-in libraries, I established a connection between the website and the sqlite database, allowing for seamless data storage and retrieval. I documented my progress and maintained clear communication with my team members.</p>
+                </article>
+                <article>
+                    <h2>
+                        <center>Saiteja Vinukonda</center><br>
+                        <center><img src="{{ url_for('static', filename='img/teja.jpeg')}}"  class="profile"> </center><br>
+                        <center>
+                            <a style="text-decoration: none; color:#0072b1; font-size:22px;" href="https://www.linkedin.com/in/saitejavinukonda/">
+                                linkedin </a></center>
+                        <br>
+                    </h2>
+                    <p> I worked as a Quality Specialist at Amazon. I used tools like SQL to extract data and make reports on the business trends and identify business development areas. I have experience in the area of training and development. I have interest in contributing myself into emerging technologies like AI.</p>
+                    <br>
+                    <p>I have contributed extensively throughout the project. Receiving insights from my teammates, I have collected data from various sites and provided feedback on different trends on airline. I also contributed in error correction and modifications in flask development, created connections for database and made power point presentation.
+                    </p>
+                </article>
+            </section>
+        </div>
+
+        <footer>
+            <nav class="footbar">
+                <ul>
+                    <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+                    <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+                    <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+                </ul>
+                <br><br>
+                <p>&copy; 2023 My Website. All rights reserved.</p>
+            </nav>
+          </footer>  
+        </body>
+        </html>

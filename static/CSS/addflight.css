@@ -1,0 +1,135 @@
+
+*{
+    font-family:'Times New Roman', Times, serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: all .2s linear;
+    text-transform: capitalize;
+ }
+ 
+ html{
+    font-size: 20px;
+    overflow-x: hidden;
+ }
+ 
+ 
+ body
+ {
+     /*background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(aeroplane.jpg);*/
+     background-size: cover;
+     background-position: center;
+ }
+ 
+ 
+ .container{
+    max-width: 1200px; /*this will contol no of tiles per row */
+    margin:0 auto;
+    padding:30px 20px;
+ }
+ 
+ .container .title{
+    font-size: 30px;
+   padding-top: 30px;
+    color:#fff;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-align: center;
+ }
+ 
+ .container .flight-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:20px;
+    
+ }
+ 
+ 
+ .container .flight-container .flight{
+    text-align: center;
+    padding:30px 20px;
+    background: #fff;
+    box-shadow: 0 .50px 8px orangered;
+    outline: .10px solid #ccc;
+    outline-offset: -1.50px;
+    cursor: pointer;
+    margin-left: 10px;
+ }
+ 
+ .container .flight-container .flight:hover{
+    outline: .20px solid #222;
+    outline-offset: 0;
+ }
+ 
+ .container .flight-container .flight img{
+    height: 250px;
+ }
+ 
+ .container .flight-container .flight:hover img{
+    transform: scale(.9);
+ }
+ 
+ .container .flight-container .flight h3{
+    padding:.50px 0;
+    font-size: 20px;
+    color:#444;
+ }
+ 
+ .container .flight-container .flight:hover h3{
+    color: rgb(54, 217, 60);
+   /* color:#27ae60;*/
+ }
+ 
+ 
+ .container .flight-container .flight .flightname{
+     font-size: 40px;
+     color:#92bb88;
+  }
+ 
+  .container .flight-container .flight .flightcode{
+     font-size: 30px;
+     color:#502f11;
+  }
+ 
+  .container .flight-container .flight .time{
+     font-size: 20px;
+     color:#020000;
+  }
+ 
+  .container .flight-container .flight .duration{
+     font-size: 20px;
+     color:#581b1b;
+  }
+  .container .flight-container .flight .stop{
+     font-size: 20px;
+     color:#061360; 
+  }
+  .container .flight-container .flight .price{
+     font-size: 20px;
+     color:#444; 
+  }
+  .submit-btn{
+	width:55%;
+	height: 25px;
+	background: rgb(253, 142, 101);
+	outline: none;
+	border-radius:30px;
+	color: white;
+   font-size: large;
+  display: inline;
+   align-items: center;
+   margin-top:10px;
+}
+
+ @media (max-width:991px){
+ 
+    html{
+       font-size: 80%;
+    }}
+ @media (max-width: 450px)
+ {
+  html{font-size: 60%;}
+ }
+ 

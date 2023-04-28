@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLVT AIRLINES</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="logo">  
+            <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+        </div>
+        <ul>
+            
+            <li> <a href="{{ url_for('index')}}">Home</a></li>
+            <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+            <li> <a href="{{ url_for('search')}}">Flights</a></li>
+            <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+            <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+
+        </ul>
+    </nav>
+</header>
+    <section id ="about">
+        <h1 class="heading"> MLVT Airlines</h1>
+        <div id="image">
+            
+            <img src="{{ url_for('static', filename='img/flight.jpg')}}" alt="">
+            <div id="intro"><br>
+                MLVT airline was founded with the mission of providing safe, reliable, and affordable air travel to people around the world. We pride ourselves on delivering exceptional customer service and making every flight a comfortable and enjoyable experience for our passengers.
+<br><br>
+With a fleet of modern aircraft and a team of highly skilled and experienced pilots, we strive to ensure that our passengers arrive at their destination on time and without any issues. We also understand the importance of sustainability and are committed to minimizing our carbon footprint by investing in more fuel-efficient planes and implementing environmentally friendly practices.
+<br><br>
+At our airline, we believe that travel should be accessible to everyone, which is why we offer a variety of fare options to suit different budgets and travel needs. We have special coupons for students and elderly people so that they can meet their loved one's and enjoy without the regret of spending on commute.
+<br><br>
+We are constantly innovating and improving our services to meet the evolving needs of our customers. Whether you are traveling for business or pleasure, we are dedicated to providing you with a seamless and stress-free travel experience.
+<br><br>
+Thank you for choosing our airline, and we look forward to welcoming you onboard soon!
+<br><br>
+               
+                <button type="Submit" class="submit-btn"> 
+                    <a style="text-decoration: none;" href="{{ url_for('search')}}">
+                        BOOK NOW </a></button>
+                    </p> 
+            </div>
+        </div>
+        
+    </section>
+    <footer>
+    <nav class="footbar">
+        <ul>
+            <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+            <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+            <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+        </ul>
+        <br><br>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </nav>
+</footer> 
+</body>
+</html>

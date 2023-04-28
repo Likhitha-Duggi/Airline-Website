@@ -1,0 +1,147 @@
+
+/*this is for middle gray box where toggling is happening*/
+
+.form-box {
+    width: 400px;
+    height: 720px;
+    position: relative;
+    box-sizing: border-box;
+    margin: auto;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+    box-shadow: 0 .50px 8px orangered;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px  #ff61241f;
+    border-radius: 30px;
+}
+
+.toggle-btn{
+    padding: 10px 22px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+      color: #fff;
+    }
+    
+    #btn{
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(to right, #ff105f,#ffad06);
+        border-radius: 30px;
+        transition: .5s;
+        }
+
+.input-group{
+top: 90px;
+position: absolute;
+width: 280px;
+transition: .5s;
+margin: 0 auto;
+padding: 10px 10px;
+}
+
+
+.drop{
+    height: 40px;
+        margin-top: 10px;
+		margin-bottom: 5px;
+        padding-left: 15px;
+        border-radius: 15px;
+        outline: none;
+		background-color: white;
+        width: 275px;
+        border-color: transparent;
+        color: black;
+}
+
+.submit-btn{
+width:85%;
+padding: 10px 30px;
+cursor: pointer;
+display:  block;
+margin: auto;
+background: linear-gradient(to right, #ff105f, #ffad06);
+border: 0;
+outline: none;
+border-radius:30px;
+color: white;
+
+}
+.submit-btn a{
+color:white;
+
+}
+::placeholder{
+color: white;
+}
+
+#Oneway
+{
+	left: 50px;
+}
+#RoundTrip{
+	left: 450px;
+
+}
+
+@media only screen and (max-width: 500px){
+    .form-box{ 
+      width: 80%;
+  }
+  
+  .input-group{
+    width:90%;
+    }
+  
+    .drop{
+      width: 285px;
+      margin-right: 20px;
+      transition: smooth;
+    }
+      .submit-btn{
+        width:65%;
+        margin-left:10px;
+      }
+  }
+  
+  @media only screen and (max-width: 450px){
+    .form-box{ 
+        width: 90%;
+    }
+    
+      .drop{
+        width: 250px;
+        margin-right: 10%;
+      }
+  }
+
+ @media only screen and (min-width: 300px) and (max-width: 400px){
+    .drop{
+        width: 200px;
+      }
+      .form-box{ 
+        width: 80%;
+    }
+
+  }
+  @media only screen and (width: 320px){
+    .drop{
+      width: 150px;
+    }
+    .form-box{ 
+      width: 80%;
+  }
+  } 

@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thankyou</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+
+  <style>
+    
+          p1 {
+        font-size: 24px;
+        color: #666;
+        margin-top: 20px;
+      }
+      .ch{
+        align-items: center;
+      margin-top: 100px;
+    } 
+    #ticket {
+   
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #000;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+
+#ticket h2 {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+#ticket p {
+  margin: 0;
+  line-height: 1.8em;
+  
+}
+
+#ticket span {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#data1::after {
+  
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+#data2::after {
+ 
+  font-weight: normal;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+#data3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#data4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#data5 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#data6 {
+  font-size: 18px;
+}
+
+#data6::before {
+  content: "$";
+  margin-right: 5px;
+}
+
+#ticket::before {
+  content: "";
+  display: block;
+  background-color: orangered;
+  height: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#ticket::after {
+  content: "";
+  display: block;
+  background-color: orangered;
+  height: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+.chart{
+      height: 100% !important;
+      width: 1000px !important;
+      margin: 0 auto;
+      margin-bottom: 20px
+    }
+    @media (max-width: 450px) {
+      .chart{
+        width: 80% !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .chart{
+        width: 50% !important;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .chart{
+        width: 90% !important;
+      }
+    }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">  
+              <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+            </div>
+            <ul>
+                
+                <li> <a href="{{ url_for('index')}}">Home</a></li>
+                <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+                <li> <a href="{{ url_for('search')}}">Flights</a></li>
+                <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+                <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+    <section id ="about">
+        <h1 class="heading"> Thank for Contacting Us!</h1>
+        <center><p1>Here is a chart that represents number of visitors in the first quarter of 2023<br><br></p1></center>
+    </section>
+   
+   
+<div class="ch">
+<section id="chart">
+    <canvas id="barchartexample" class="chart"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+  
+
+  <script>
+    new Chart(document.getElementById("barchartexample"), {
+      type: 'bar',
+      data: {
+        labels: ["Tampa", "Orlando", "Miami", "Gainseville", "Key West", "Jacksonville"],
+        datasets: [
+          {
+            label: "Number of visitors in April",
+            backgroundColor: ["#F1B2DC", "#FF6D6A", "#E9EC6B", "#EFBE7D", "#B1A2CA","#8BD3E6"],
+            data: [12500,24089, 51298, 9080, 11256, 45035,0],
+            borderWidth:2
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: { display: false,
+        fontSize: 30 },
+        title: {
+          display: true,
+          text: 'Number of visitors in the first quarter of 2023',
+          fontSize: 30,
+        },
+        scales: {
+      xAxes: [{
+        ticks: {
+          fontSize: 23 // set font size for x-axis
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          fontSize: 23 // set font size for y-axis
+        }
+      }],
+      tooltips: {
+    titleFontSize: 25,
+  }
+    },
+        
+        animation: {
+             duration: 2000,
+             easing: 'easeInOutQuart',
+             animateScale: true,
+             animateRotate: true,
+             delay: 0
+         },
+      }
+    });
+
+</script>
+</section>
+</div>
+
+<footer>
+    <nav class="footbar">
+        <ul>
+            <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+            <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+            <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+        </ul>
+        <br><br>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </nav>
+  </footer>  
+</body>
+</html>

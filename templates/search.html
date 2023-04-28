@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css')}}">
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">  
+                <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+            </div>
+            <ul>
+                
+                <li> <a href="{{ url_for('index')}}">Home</a></li>
+                <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+                <li> <a href="{{ url_for('search')}}">Flights</a></li>
+                <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+                <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+
+    <section id ="about">
+        <h1 class="heading"> SCHEDULE SEARCH</h1>
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="Oneway()">Oneway</button>
+                <button type="button" class="toggle-btn" onclick="RoundTrip()">RoundTrip</button>
+            
+            </div>
+            
+
+            <form id="Oneway" class="input-group" method="post" action="{{ url_for('addflight') }}" onsubmit="return validateForm()">
+                <label>Flying From</label>
+                <select name="Flying from" id="flying from" class="drop">
+                    <option value="disabled select hidden"> Flying from </option>
+                    <option value="1"> Tampa International Airport </option>
+                    <option value="2"> Orlando International Airport </option>
+                    <option value="3"> Miami International Airport </option>
+                    <option value="4"> Fort Lauderdale-Hollywood International Airport </option>
+                    <option value="5"> Gainesville Regional Airport </option>
+                    <option value="6"> Jacksonville International Airport </option>
+                    <option value="7"> Sarasota-Bradenton International Airport </option>
+                    <option value="8"> Key West International Airport </option>
+                    <option value="9"> Melbourne International Airport </option>
+                </select>
+
+                <label>Flying To</label>
+                <select name="Flying to" id="flying to" class="drop">
+                    <option value="disabled select hidden"> Flying to </option>
+                    <option value="1"> Tampa International Airport </option>
+                    <option value="2"> Orlando International Airport </option>
+                    <option value="3"> Miami International Airport </option>
+                    <option value="4"> Fort Lauderdale-Hollywood International Airport </option>
+                    <option value="5"> Gainesville Regional Airport </option>
+                    <option value="6"> Jacksonville International Airport </option>
+                    <option value="7"> Sarasota-Bradenton International Airport </option>
+                    <option value="8"> Key West International Airport </option>
+                    <option value="9"> Melbourne International Airport </option>
+                </select>
+
+
+                <label> Departure date</label>
+                <input type="date" class="drop" name="date" placeholder="departure date">
+
+                <label> Adults</label>
+                <input type="number" class="drop" name="adult" value=1>
+
+                <label> Children</label>
+                <input type="number" class="drop" name="children" value=0>
+
+
+                <label>Travel Class</label>
+                <select name="Travel Class" id="travel class" class="drop">
+                    <option value="disabled select hidden"> Travel Class </option>
+                    <option value="1"> Economy </option>
+                    <option value="2"> Business </option>
+                </select>
+                <br> <br>
+<button type="submit" class="submit-btn" style="text-decoration: none;">Submit</button>
+
+         </form>
+            <form id="RoundTrip" class="input-group" method="post" action="{{ url_for('addflight') }}" onsubmit="return validateReturnForm()">
+
+                <label>Flying From</label>
+                <select name="Flying from" id="flying from" class="drop">
+                    <option value="disabled select hidden"> Flying from </option>
+                    <option value="1"> Tampa International Airport </option>
+                    <option value="2"> Orlando International Airport </option>
+                    <option value="3"> Miami International Airport </option>
+                    <option value="4"> Fort Lauderdale-Hollywood International Airport </option>
+                    <option value="5"> Gainesville Regional Airport </option>
+                    <option value="6"> Jacksonville International Airport </option>
+                    <option value="7"> Sarasota-Bradenton International Airport </option>
+                    <option value="8"> Key West International Airport </option>
+                    <option value="9"> Melbourne International Airport </option>
+                </select>
+
+                <label>Flying To</label>
+                <select name="Flying to" id="flying to" class="drop">
+                    <option value="disabled select hidden"> Flying to </option>
+                    <option value="1"> Tampa International Airport </option>
+                    <option value="2"> Orlando International Airport </option>
+                    <option value="3"> Miami International Airport </option>
+                    <option value="4"> Fort Lauderdale-Hollywood International Airport </option>
+                    <option value="5"> Gainesville Regional Airport </option>
+                    <option value="6"> Jacksonville International Airport </option>
+                    <option value="7"> Sarasota-Bradenton International Airport </option>
+                    <option value="8"> Key West International Airport </option>
+                    <option value="9"> Melbourne International Airport </option>
+                </select>
+
+                <label> Departure date</label>
+                <input type="date" class="drop" name="departure" placeholder="departure date">
+
+                <label> Arrival date</label>
+                <input type="date" class="drop" name="arrival" placeholder="departure date">
+
+
+                <label> Adults</label>
+                <input type="number" class="drop" value=1>
+
+
+                <label> Children</label>
+                <input type="number" class="drop" value=0>
+
+                <label>Travel Class</label>
+                <select name="Travel Class" id="travel class" class="drop">
+                    <option value="disabled select hidden"> Travel Class </option>
+                    <option value="1"> Economy </option>
+                    <option value="2"> Business </option>
+                </select><br><br>
+
+                <button type="submit" class="submit-btn" style="text-decoration: none;">Submit</button>
+            </form>
+        </div>
+        </section>
+    </div>
+<script>
+
+function validateForm(){
+    var from = document.forms["Oneway"]["Flying from"].value;
+    var to = document.forms["Oneway"]["Flying to"].value;
+    var date = document.forms["Oneway"]["date"].value;
+    var adult = document.forms["Oneway"]["adult"].value;
+    var children = document.forms["Oneway"]["children"].value;
+    var travelclass = document.forms["Oneway"]["Travel Class"].value;
+
+    if (from == "disabled selected hidden" || to=="disabled select hidden") {
+    alert("Please select your location");
+    return false;
+  }
+
+  if(date==""){
+    alert("Please enter date of departure");
+    return false;
+  }
+
+}
+
+function validateReturnForm(){
+    var from = document.forms["RoundTrip"]["Flying from"].value;
+    var to = document.forms["RoundTrip"]["Flying to"].value;
+    var departure = document.forms["RoundTrip"]["departure"].value;
+    var arrival = document.forms["RoundTrip"]["arrival"].value;
+
+    if (from == "disabled selected hidden" || to=="disabled select hidden") {
+    alert("Please select your location");
+    return false;
+  }
+
+  if(departure == ""|| arrival == ""){
+    alert("Please choose the dates");
+    return false;
+  }
+
+}
+    var x = document.getElementById("Oneway");
+    var y = document.getElementById("RoundTrip");
+    var z = document.getElementById("btn");
+
+    function RoundTrip() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+
+    function Oneway() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+    }
+</script>
+
+<footer>
+    <nav class="footbar">
+        <ul>
+            <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+            <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+            <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+        </ul>
+        <br><br>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </nav>
+</footer> 
+</body>
+</html>

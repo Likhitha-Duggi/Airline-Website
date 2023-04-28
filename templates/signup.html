@@ -1,0 +1,196 @@
+<html lang='en'>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration and Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css')}}">
+
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+      </div>
+      <ul>
+
+        <li> <a href="{{ url_for('index')}}">Home</a></li>
+        <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+        <li> <a href="{{ url_for('search')}}">Flights</a></li>
+        <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+        <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  {% if error %}
+  <script>alert('{{ error }}')</script>
+  {% endif %}
+
+  {% if msg %}
+  <script>
+    alert('{{msg}}');
+  </script>
+  {% endif %}
+
+  <section id="about">
+    <h1 class="heading"> SIGN UP / LOGIN</h1>
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+        <button type="button" class="toggle-btn" onclick="Signin()">Sign
+          in</button>
+      </div>
+
+      <form id="Register" class="input-group" method="post" action="{{ url_for('addrec') }}"
+        onsubmit="return validateForm()">
+        <input type="text" class="input-field" placeholder="Name" name="firstName">
+        <input type="text" class="input-field" id="email" name="email" placeholder="Enter your email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <!-- <input type="text" class="input-field" placeholder="Last Name" name="lastName" > -->
+        <input type="date" name="dob" class="input-field" min="1900-01-01" max="2030-12-31" placeholder="Dob"
+          class="input-field">
+
+        <table>
+          <tr>
+            <td><select name="gender" id="gender" class="drop">
+                <option value="disabled selected hidden">Select your Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </select></td>
+          </tr>
+        </table>
+        <input type="text" class="input-field" name="contactNumber" placeholder="Enter the contact number"
+          pattern="[0-9]{10}" minlength="10" maxlength="10"><br>
+        <input type="password" class="input-field" name="password" placeholder="Enter the Password"><br> <br>
+
+        <input type="checkbox" id="myCheckbox" name="myCheckbox">
+        <label for="myCheckbox" style="font-size: 14px;color: white">I agree to the <a href="{{ url_for('tnc')}}"
+            style="color: white;">Terms and Conditions</a></label>
+        <br><br>
+        <button type="submit" class="submit-btn">Register</button>
+        <br>
+
+
+      </form>
+      <form id="Signin" class="input-group" action="{{ url_for('login1')}}" onsubmit="return validateFormSign()"
+        method="post">
+
+        <input type="text" class="input-field" placeholder="User Id" name="username"> <input type="password"
+          class="input-field" placeholder="Enter Password" name="psw">
+        <br>
+        <br>
+        <button type="submit" class="submit-btn">Sign in</button>
+      </form>
+    </div>
+
+    <br>
+    <script>
+      function validateForm() {
+        // Get input values
+        var firstName = document.forms["Register"]["firstName"].value;
+        var email = document.forms["Register"]["email"].value;
+        var dob = document.forms["Register"]["dob"].value;
+        var gender = document.forms["Register"]["gender"].value;
+        var contactNumber = document.forms["Register"]["contactNumber"].value;
+        var password = document.forms["Register"]["password"].value;
+        var checkbox = document.getElementById("myCheckbox").checked;
+
+        // Validate first name
+        if (firstName == "") {
+          alert("Please enter your first name.");
+          return false;
+        }
+
+        if (email == "") {
+          alert("Please enter your email.");
+          return false;
+        }
+
+        // Validate date of birth
+        if (dob == "") {
+          alert("Please enter your date of birth.");
+          return false;
+        }
+
+        // Validate gender
+        if (gender == "disabled selected hidden") {
+          alert("Please select your gender.");
+          return false;
+        }
+
+        // Validate contact number
+        if (contactNumber == "") {
+          alert("Please enter your contact number.");
+          return false;
+        }
+
+        // Validate password
+        if (password == "") {
+          alert("Please enter your password.");
+          return false;
+        }
+
+        // Validate checkbox
+        if (!checkbox) {
+          alert("Please agree to the Terms and Conditions.");
+          return false;
+        }
+
+      }
+      function validateFormSign() {
+        var username = document.forms["Signin"]["username"].value;
+        var password = document.forms["Signin"]["psw"].value;
+        if (username == "") {
+          alert("Please enter your username.");
+          return false;
+        }
+        if (password == "") {
+          alert("Please enter you password.");
+          return false;
+        }
+      }
+
+
+      var x = document.getElementById("Register");
+      var y = document.getElementById("Signin");
+      var z = document.getElementById("btn");
+
+      function Signin() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+      }
+
+      function Register() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0px";
+      }
+
+
+    </script>
+  </section>
+
+
+  <footer>
+    <nav class="footbar">
+      <ul>
+        <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+        <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+        <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+      </ul>
+      <br><br>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </nav>
+  </footer>
+
+</body>
+
+</html>

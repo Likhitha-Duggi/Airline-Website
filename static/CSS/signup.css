@@ -1,0 +1,155 @@
+/*this is for middle gray box where toggling is happening*/
+.form-box{
+    
+    width: 400px;
+    height: 720px;
+    position: relative;
+    box-sizing: border-box;
+    margin: auto;
+    background: rgba(0,0,0,0.5);
+    overflow: hidden;
+    box-shadow: 0 .50px 8px orangered;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+
+/* for toggle button box */
+.button-box{
+width: 220px;
+margin: 35px auto;
+position: relative;
+box-shadow: 0 0 20px 9px  #ff61241f;
+border-radius: 30px;
+
+}
+
+/* for toggle button */
+.toggle-btn{
+padding: 10px 30px;
+cursor: pointer;
+background: transparent;
+border: 0;
+outline: none;
+position: relative;
+  color: #fff;
+}
+
+/* for toggling */
+#btn{
+top: 0;
+left: 0;
+position: absolute;
+width: 110px;
+height: 100%;
+background: linear-gradient(to right, #ff105f,#ffad06);
+border-radius: 30px;
+transition: .5s;
+}
+
+/* content change in toggle*/
+.input-group{
+top: 60px;
+position: absolute;
+width: 280px;
+transition: .5s;
+margin: 0 auto;
+padding: 10px 10px;
+}
+
+.input-field
+{
+height:0 auto;
+margin-top: 5px;
+padding: 5px;
+border: 1px solid #777;
+border-radius: 15px;
+outline: none;
+color: #2b6a2c;
+width: 100%;
+background: white;
+margin: 25px 0px 0px;
+padding: 5px 5px 5px 15px;
+height: 50px;
+width: 275px;
+}
+
+.text{
+color:#fff;
+}
+
+/**/
+.submit-btn{
+width:85%;
+padding: 10px 30px;
+cursor: pointer;
+display:  block;
+margin: auto;
+background: linear-gradient(to right, #ff105f, #ffad06);
+border: 0;
+outline: none;
+border-radius:30px;
+color: white;
+
+}
+.submit-btn a{
+color:white;
+
+}
+
+.drop{
+height: 50px;
+    margin-top: 25px;
+    padding-left: 15px;
+    border: 1px white;
+    border-radius: 15px;
+    outline: none;
+    background: white;
+    width: 180%;
+    color: #777;
+}
+/**/
+#Register
+{
+left: 50px;
+}
+#Signin{
+left: 450px;
+
+}
+
+
+@media (max-width: 530px){
+  .form-box{ 
+    width: 80%;
+}
+
+.input-group{
+  
+  width:90%;
+  }
+  
+  .input-field
+  {
+    max-width: 275px;
+  width: 80%;
+  margin-left: -10px;
+  }
+
+  .drop{
+    /* width: 275px; */
+    margin-left: -10px;
+  }
+    .submit-btn{
+      width:65%;
+      margin-left:10px;
+    }
+}
+
+
+@media (max-width: 490px){
+  .drop{
+width: 100%;
+  }
+}

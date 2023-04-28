@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <style>
+        table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+td {
+  padding: 20px;
+  text-align: center;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px; /* adjust as needed */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+          <div class="logo">  
+              <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+          </div>
+          <ul>
+              
+              <li> <a href="{{ url_for('index')}}">Home</a></li>
+              <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+              <li> <a href="{{ url_for('search')}}">Flights</a></li>
+              <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+              <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+  
+          </ul>
+      </nav>
+  </header>
+  <section id ="about">
+    <h1 class="heading">Registration Table</h1>
+
+<table border = 1>
+<thead>
+<td>First name</td>
+<td>Email</td>
+<td>DOB</td>
+<td>Gender</td>
+<td>Contact</td>
+<td>Password</td>
+</thead>
+{% for row in rows %}
+<tr>
+<td>{{row["firstname"]}}</td>
+<td>{{row["email"]}}</td>
+<td> {{ row["dob"]}}</td>
+<td> {{ row["gender"]}}</td>
+<td>{{row['contactNumber']}}</td>
+<td>{{row['password']}}</td>
+</tr>
+{% endfor %}
+</table>
+
+</section>
+<footer>
+    <nav class="footbar">
+        <ul>
+            <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+            <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+            <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+        </ul>
+        <br><br>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </nav>
+  </footer>
+</body>
+</html>

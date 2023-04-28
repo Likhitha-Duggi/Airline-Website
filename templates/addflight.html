@@ -1,0 +1,407 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> itinerary </title>
+        <link rel = "stylesheet" href ="{{ url_for('static', filename='css/styles.css')}}">
+        <link rel = "stylesheet" href ="{{ url_for('static', filename='css/addflight.css')}}">
+        <style>
+            a{
+                color: white;
+            }
+        </style>
+        <script>
+            function checkout() {
+              var message = "You are proceeding to payment page";
+              alert(message);
+            }
+          </script>
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">  
+                <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+            </div>
+            <ul>
+                
+                <li> <a href="{{ url_for('index')}}">Home</a></li>
+                <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+                <li> <a href="{{ url_for('search')}}">Flights</a></li>
+                <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+                <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+    
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+
+       <h1 class="heading">CHOOSE YOUR ITINERARY</h1>
+       <div class="flight-container">
+          <div class="flight" data-name="f-1" data-from="Tampa" data-to="Orlando" data-date="2030-12-31" data-price="$40.00">
+ 
+             <h3>Tampa ->Orlando</h3>
+             <h3> TPA -> MCO</h3><br>
+             <h4> 4pm-4.58pm </h4>
+             <h4> Duration: 58min</h4><br>
+             <div class="price">$40.00</div>
+ 
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout', departure='Tampa', arrival='Orlando', fcode='TPA -> MCO', time='4:00PM-4:58PM', duration='58min', price='40.00') }}">BOOK TICKET</a></button>
+
+                <!-- <a href="checkout.html?departure=Tampa&arrival=Orlando&fcode=TPA -> MCO&time=4:00PM%20-%204:58PM&duration=58min&price=40.00" >
+                    BOOK TICKET </a></button> -->
+
+          </div>
+ 
+          <div class="flight" data-name="f-2">
+ 
+             <h3>Tampa -> Miami</h3>
+             <h3> TPA -> MIA</h3><br>
+             <h4> 8.40am - 9.49am </h4>
+             <h4> Duration: 1hr 9min</h4><br>
+             <div class="price">$150.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Tampa',arrival='Miami',fcode='TPA -> MIA',time='8:40AM-9:49AM',duration='1hr-9min',price='150.00' ) }}">
+                    BOOK TICKET </a></button>
+          </div>
+ 
+          <div class="flight" data-name="f-3">
+ 
+             <h3>Tampa -> Fort Lauderdale</h3>
+             <h3> TPA -> FLL </h3><br>
+             <h4> 8.35am-10.05am </h4>
+             <h4> Duration: 1hr 30 min</h4><br>
+             <div class="price">$60.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Tampa',arrival='Fort Lauderdale',fcode='TPA -> FLL',time='8:35AM-10:05AM',duration='1hr-30min',price='60.00') }}">
+                    BOOK TICKET </a></button>
+          </div>
+ 
+          <div class="flight" data-name="f-4">
+ 
+             <h3>Tampa -> Gainesville</h3>
+             <h3> TPA -> GNV</h3><br>
+             <h4> 9.27am - 1.43pm </h4>
+             <h4> Stop: MIA</h4>
+             <h4> Duration: 3 hr 16 min</h4><br>
+             <div class="price">$230.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Tampa',arrival='Gainesville',fcode='TPA -> GNV',time='9:27AM-1:43PM',duration='3hr-16min',price='230.00')}}">
+                    BOOK TICKET </a></button>
+          </div>
+ 
+          <div class="flight" data-name="f-5">
+ 
+             <h3>Tampa -> Melbourne</h3>
+             <h3> TPA -> MLB</h3><br>
+             <h4> 11:00 am - 3:46 pm </h4>
+             <h4> Stop: CLT</h4>
+             <h4> Duration: 4hr 46min </h4><br>
+             <div class="price">$300.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Tampa',arrival='Melbourne',fcode='TPA -> MLB',time='11:00AM-3:46PM',duration='4hr-46min',price='300.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ 
+          <div class="flight" data-name="f-6">
+ 
+             <h3>Tampa -> Jacksonville</h3>
+             <h3> TPA -> JAX</h3><br>
+             <h4> 7:45pm - 11:21pm </h4>
+             <h4> Stop: MIA</h4>
+             <h4> Duration: 3 hr 36 min</h4><br>
+             <div class="price">$176.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Tampa',arrival='Jacksonville',fcode='TPA -> JAX',time='7:45PM-11:21PM',duration='3hr-36min',price='176.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ 
+          <div class="flight" data-name="f-7">
+ 
+             <h3>Tampa -> Key West</h3>
+             <h3> TPA -> EYW</h3><br>
+             <h4> 4:00pm - 5:15pm </h4>
+             <h4> Duration: 1hr 15min</h4><br>
+             <div class="price">$98.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Tampa',arrival='Key West',fcode='TPA -> EYW',time='4:00PM-5:15PM',duration='1hr-15min',price='98.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ 
+          <div class="flight" data-name="f-8">
+ 
+             <h3> Orlando -> Miami</h3>
+             <h3> MCO -> MIA</h3><br>
+             <h4> 11:00 AM - 12:08 PM</h4>
+             <h4> Duration: 1hr 8min</h4><br>
+             <div class="price">$87.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Orlando',arrival='Miami',fcode='MCO -> MIA',time='11:00AM-12:08PM',duration='1hr-8min',price='87.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+
+ <div class="flight" data-name="f-9">
+ 
+             <h3> Orlando -> Sarasota</h3>
+             <h3> MCO -> SRQ </h3><br>
+             <h4> 9:00 AM - 1:27 PM</h4>
+             <h4> Duration: 4hr 27min</h4><br>
+             <div class="price">$367.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Orlando',arrival='Sarasota',fcode='MCO -> SRQ' ,time='9:00AM-1:27PM',duration='4hr-27min',price='367.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-10">
+ 
+             <h3> Orlando -> Gainesville</h3>
+             <h3> MCO -> GNV</h3><br>
+             <h4> 10:17AM - 3:00 PM </h4>
+             <h4> Duration: 4hr 43min</h4><br>
+             <div class="price">$236.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Orlando',arrival='Gainesville',fcode='MCO -> GNV',time='10:17PM-3:00PM',duration='4hr-43min',price='236.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-11">
+ 
+             <h3> Orlando -> Melbourne</h3>
+             <h3> MCO -> MLB</h3><br>
+             <h4> 7:00AM - 11:58AM </h4>
+             <h4> Duration: 4hr 58min</h4><br>
+             <div class="price">$387.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Orlando',arrival='Melbourne',fcode='MCO -> MLB',time='7:00AM-11:58AM',duration='4hr-58min',price='387.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+
+ <div class="flight" data-name="f-12">
+ 
+             <h3> Melborune -> Orlando</h3>
+             <h3> MLB -> MCO</h3><br>
+             <h4> 10:00PM - 2:58 AM </h4>
+             <h4> Duration: 4hr 58min</h4><br>
+             <div class="price">$236.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn">  
+                <a href="{{ url_for('checkout',departure='Melborune',arrival='Orlando',fcode='MLB -> MCO',time='10:00PM-2:58AM',duration='4hr-58min',price='236.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ 
+ <div class="flight" data-name="f-13">
+ 
+             <h3> Gainesville -> Orlando </h3>
+             <h3> GNV - > MCO </h3><br>
+             <h4> 7:00PM - 11:43 PM </h4>
+             <h4> Duration: 4hr 43min</h4><br>
+             <div class="price">$236.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Gainesville',arrival='Orlando',fcode='GNV - > MCO',time='7:00PM-11:43PM',duration='4hr-43min',price='236.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-14">
+ 
+             <h3> Sarasota -> Orlando</h3>
+             <h3> SRQ -> MCO </h3><br>
+             <h4> 5:00 PM - 9:27 PM</h4>
+             <h4> Duration: 4hr 27min</h4><br>
+             <div class="price">$367.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout', departure='Sarasota', arrival='Orlando', fcode='SRQ -> MCO', time='5:00 PM - 9:27 PM', duration='4hr-27min', price='367.00') }}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-15">
+ 
+             <h3> Miami -> Orlando </h3>
+             <h3> MIA -> MCO </h3><br>
+             <h4> 8:00 AM - 9:08 AM</h4>
+             <h4> Duration: 1hr 8min</h4><br>
+             <div class="price">$87.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn">  
+                <a href="{{ url_for('checkout',departure='Miami',arrival='Orlando',fcode='MIA -> MCO',time='8:00AM-9:08AM',duration='1hr-8min',price='87.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-16">
+ 
+             <h3> Miami -> Sarasota </h3>
+             <h3> MIA -> SRQ </h3><br>
+             <h4> 11:00 AM - 5:53 PM</h4>
+             <h4> Duration: 6hr 53min</h4><br>
+             <div class="price">$378.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Miami',arrival='Sarasota',fcode='MIA -> SRQ',time='11:00AM-5:53PM',duration='6hr-53min',price='378.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-17">
+ 
+             <h3> Miami -> Gainesville </h3>
+             <h3> MIA -> GNV </h3><br>
+             <h4> 7:44 AM - 9:00 AM</h4>
+             <h4> Duration: 1hr 16min</h4><br>
+             <div class="price">$146.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for ('checkout',departure='Miami',arrival='Gainesville',fcode='MIA -> GNV',time='7:44AM-9:00AM',duration='1hr-16min',price='146.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-18">
+ 
+             <h3> Miami -> Jacksonville </h3>
+             <h3> MIA -> JAX </h3><br>
+             <h4> 3:00 PM - 4:19 PM</h4>
+             <h4> Duration: 1hr 19min</h4><br>
+             <div class="price">$188.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn">  
+                <a href="{{ url_for ('checkout',departure='Miami',arrival='Jacksonville',fcode= 'MIA -> JAX',time='3:00PM-4:19PM',duration='1hr-19min',price='188.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ 
+ <div class="flight" data-name="f-19">
+ 
+             <h3> Miami -> Keywest </h3>
+             <h3> MIA -> EYW </h3><br>
+             <h4> 10:00 AM - 10:56 AM</h4>
+             <h4> Duration: 56min</h4><br>
+             <div class="price">$105.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for ('checkout',departure='Miami',arrival='Keywest',fcode='MIA -> EYW',time='10:00AM-10:56AM',duration='56min',price='105.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ 
+ <div class="flight" data-name="f-20">
+ 
+             <h3> Keywest -> Miami </h3>
+             <h3> EYW -> MIA </h3><br>
+             <h4> 6:00 PM - 6:56 PM</h4>
+             <h4> Duration: 56min</h4><br>
+             <div class="price">$105.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Keywest',arrival='Miami',fcode='EYW -> MIA',time='6:00PM-6:56PM',duration='56min',price='105.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-21">
+ 
+             <h3> Jacksonville -> Miami </h3>
+             <h3> JAX -> MIA </h3><br>
+             <h4> 10:00 AM - 11:19 AM</h4>
+             <h4> Duration: 1hr 19min</h4><br>
+             <div class="price">$188.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Jacksonville',arrival='Miami',fcode='JAX -> MIA',time='10:00AM-11:19AM',duration='1hr-19min',price=
+                    '188.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-22">
+ 
+             <h3> Gainesville -> Miami </h3>
+             <h3> GNV -> MIA </h3><br>
+             <h4> 6:44 PM - 8:00 PM</h4>
+             <h4> Duration: 1hr 16min</h4><br>
+             <div class="price">$146.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Gainesville',arrival='Miami',fcode='GNV -> MIA',time='6:44PM-8:00PM',duration='1hr-16min',price='146.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-23">
+ 
+             <h3> Sarasota -> Miami </h3>
+             <h3> SRQ -> MIA </h3><br>
+             <h4> 9:00 PM - 3:53 PM</h4>
+             <h4> Duration: 6hr 53min</h4><br>
+             <div class="price">$378.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Sarasota',arrival='Miami',fcode='SRQ -> MIA',time='9:00PM-3:53PM',duration='6hr-53min',price='378.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-24">
+ 
+             <h3> Sarasota -> Gainesville</h3>
+             <h3> SRQ -> GNV </h3><br>
+             <h4> 1:00 PM - 5:47 PM</h4>
+             <h4> Duration: 4hr 47min</h4><br>
+             <div class="price">$366.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Sarasota',arrival='Gainesville',fcode='SRQ -> GNV',time='1:00PM-5:47PM',duration='4hr-47min',price='366.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-25">
+ 
+             <h3> Sarasota -> Melbourne</h3>
+             <h3> SRQ -> MLB </h3><br>
+             <h4> 12:07 PM - 5:20 PM</h4>
+             <h4> Duration: 5hr 13min</h4><br>
+             <div class="price">$468.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn">  
+                <a href="{{ url_for('checkout',departure='Sarasota',arrival='Melbourne',fcode='SRQ -> MLB',time='12:07PM-5:20PM',duration='5hr-13min',price='468.00' )}}">
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-26">
+ 
+             <h3> Sarasota -> Jacksonville</h3>
+             <h3> SRQ -> JAX </h3><br>
+             <h4> 6:00 AM - 3:12 PM</h4>
+             <h4> Duration: 9hr 12min</h4><br>
+             <div class="price">$223.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Sarasota',arrival='Jacksonville',fcode='SRQ -> JAX',time='6:00AM-3:12PM',duration='9hr-12min',price='223.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-27">
+ 
+             <h3> Gainsville -> Melbourne</h3>
+             <h3> GNV -> MLB </h3><br>
+             <h4> 6:06 PM - 10:19 PM</h4>
+             <h4> Duration: 4hr 13min</h4><br>
+             <div class="price">$375.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Gainsville',arrival='Melbourne',fcode='GNV -> MLB',time='6:06PM-10:19PM',duration='4hr-13min',price='375.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-28">
+ 
+             <h3> Gainesville -> Jacksonville</h3>
+             <h3> GNV -> JAX </h3><br>
+             <h4> 6:30 AM - 1:11 PM</h4>
+             <h4> Duration: 6hr 41min</h4><br>
+             <div class="price">$350.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Gainsville',arrival='Jacksonville',fcode='GNV -> JAX',time='6:30AM-1:11PM',duration='6hr-41min',price='350.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+ <div class="flight" data-name="f-29">
+ 
+             <h3> Gainsville -> KeyWest</h3>
+             <h3> GNV -> EYW </h3><br>
+             <h4> 6:30 AM - 11:21 AM</h4>
+             <h4> Duration: 4hr 51min</h4><br>
+             <div class="price">$217.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='Gainsville',arrival='KeyWest',fcode='GNV -> EYW',time='6:30AM-11:21AM',duration='4hr-51min',price='217.00')}}" >
+                   BOOK TICKET</a></button>
+          </div>
+ <div class="flight" data-name="f-30">
+ 
+             <h3> KeyWest -> Melbourne</h3>
+             <h3> EYW -> MLB </h3><br>
+             <h4> 10:07 AM - 2:50 PM</h4>
+             <h4> Duration: 4hr 43min</h4><br>
+             <div class="price">$490.00</div>
+             <button method="POST" action="{{ url_for('checkout') }}" type="Submit" class="submit-btn"> 
+                <a href="{{ url_for('checkout',departure='KeyWest',arrival='Melbourne',fcode='EYW -> MLB',time='10:07AM-2:50PM',duration='4hr-43min',price='490.00')}}" >
+                    BOOK TICKET </a></button>
+          </div>
+          </div>
+       </div>
+    </div>
+    
+    <footer>
+        <nav class="footbar">
+            <ul>
+                <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+                <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+                <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+            </ul>
+            <br><br>
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+        </nav>
+    </footer> 
+    </body>
+    </html>

@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> TNC </title>
+        <link rel = "stylesheet" href ="{{ url_for('static', filename='css/styles.css')}}">
+        
+<style>
+    .container{
+        width:100%;
+    }
+    h1{
+ text-align: center;
+    }
+    p{
+        text-align: justify;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    h4{
+        text-align: justify;  
+        margin-left: 20px;
+        margin-right: 20px;
+        color:rgb(100, 27, 0)
+    }
+    footer p{
+        text-align: center;
+    }
+
+    h3{
+        color: rgb(59, 0, 0);
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+    }
+</style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo">  
+                    <a href="{{ url_for('index')}}"><img src="{{ url_for('static', filename='img/direct-flight.png')}}"></a>
+                </div>
+                <ul>
+                    
+                    <li> <a href="{{ url_for('index')}}">Home</a></li>
+                    <li> <a href="{{ url_for('signup')}}">Signup/Login</a></li>
+                    <li> <a href="{{ url_for('search')}}">Flights</a></li>
+                    <li> <a href="{{ url_for('contact')}}">Contact</a></li>
+                    <li> <a href="{{ url_for('aboutus')}}">About Us</a></li>
+        
+                </ul>
+            </nav>
+        </header>
+        <br>
+<div class="container">
+   <h1>Terms & Conditions</h1> 
+<br>
+   <h3>Welcome to MLVT! By using our website, you agree to be bound by the following terms and conditions.</h3>
+<br><br>
+<h4>Flight Bookings:</h4><br>
+<p>
+When you make a booking with MLVT, you agree to our terms and conditions of travel, which include our cancellation and refund policy. Please read these terms carefully before making a booking.</p>
+<br><br>
+
+<h4>Travel Documents:</h4><br>
+<p>
+It is your responsibility to ensure that you have all the necessary travel documents, including passports, visas, and any other permits required for your destination. MLVT is not responsible for any issues arising from your failure to obtain the required travel documents.</p>
+<br><br>
+
+<h4>Check-In and Boarding:</h4><br>
+<p>
+You must check-in and board your flight at the designated times, as indicated in your itinerary. MLVT reserves the right to deny boarding to any passenger who arrives late or fails to comply with our check-in and boarding procedures.</p>
+<br><br>
+
+<h4>Baggage:</h4><br>
+<p>
+You are allowed to carry a certain amount of baggage, depending on your ticket type and destination. Please refer to our website for more information on baggage allowances and restrictions. MLVT is not responsible for any loss, damage, or delay of your baggage during your travel.</p>
+<br><br>
+
+<h4>Flight Changes and Cancellations:</h4><br>
+<p>
+MLVT reserves the right to make changes to your flight schedule, including cancellations, due to operational, safety, or other reasons. In such cases, we will make reasonable efforts to inform you of the changes and offer alternative arrangements, where possible.</p>
+<br><br>
+
+<h4>Liability:</h4><br>
+<p>
+MLVT is not liable for any loss, damage, or injury arising from your travel, including but not limited to delays, cancellations, missed connections, and lost or damaged baggage. We strongly recommend that you purchase travel insurance to protect yourself against such risks.</p>
+<br><br>
+
+<h4>Governing Law:</h4><br>
+<p>
+These terms and conditions are governed by the laws of the country where MLVT is registered, and any dispute arising from your use of our app or services will be subject to the jurisdiction of the courts of that country.
+<br>
+By using our app or services, you acknowledge that you have read, understood, and agreed to these terms and conditions. If you have any questions or concerns, please contact our customer service team for assistance.</p>
+<br><br>
+
+</div>
+
+<footer>
+    <nav class="footbar">
+        <ul>
+            <li> <a href="{{ url_for('faq')}}">FAQ</a></li>
+            <li> <a href="{{ url_for('tnc')}}">TnC</a></li>
+            <li> <a href="{{ url_for('contact')}}">Feedback</a></li>
+        </ul>
+        <br><br>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </nav>
+</footer> 
+    </body></html>
+   
